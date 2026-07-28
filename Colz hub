@@ -1,13 +1,5 @@
---yo bro
+-- if you know
+if game.placeId == 100572791490444 then
+   HttpGet(game, "https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Game%20list.lua")
 
-local HttpGet = game.HttpGet
-local GameId: number = game.GameId
-
-local Games: {[number]: string} = loadstring(
-  HttpGet(game, "https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Game%20list.luaㅤ")
-)() :: any
-
-local URL: string? = Games[GameId]
-if not URL then return end
-
-loadstring(HttpGet(game, URL))()
+print("staff")
