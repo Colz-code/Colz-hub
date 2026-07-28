@@ -1,18 +1,15 @@
--- SISTEM DETEKSI EXECUTOR (executor tidak support)
-local checkExec = identifyexecutor or getexecutorname or whatexecutor
-local executorName = checkExec and tostring(checkExec()):lower() or ""
+local function isDelta()
+    local check = identifyexecutor or getexecutorname or whatexecutor
+    if check and string.find(tostring(check()):lower(), "delta") then return true end
+    if Delta or delta or _G.Delta or _G.delta or getgenv().Delta or getgenv().delta then return true end
+    if getgenv()._delta_core or getgenv().delta_version or getgenv().Delta_Loaded then return true end
+    return false
+end
 
-if string.find(executorName, "delta") then
-    -- Jika Terdeteksi Menggunakan Delta Executor
+if isDelta() then
     game:GetService("Players").LocalPlayer:Kick("executor ini tidak support untuk script ini")
 else
-    -- Jika Executor Aman, Jalankan Script Utama Colz Hub
-    local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Colz%20hub"))()
+    pcall(function()
+        loadstring(game:HttpGet("https://githubusercontent.com"))()
     end)
-    
-    -- Cadangan Pengaman Jika Loadstring GitHub Gagal Dimuat
-    if not success then
-        warn("Gagal memuat script utama: " .. tostring(err))
-    end
 end
