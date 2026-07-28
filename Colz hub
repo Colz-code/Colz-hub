@@ -1,4 +1,5 @@
 -- if you know
+
 if game.placeId == 100572791490444 then
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Layangan"))() 
 
