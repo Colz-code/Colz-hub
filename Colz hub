@@ -1,5 +1,5 @@
 -- if you know
 if game.placeId == 100572791490444 then
-   HttpGet(game, "https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Game%20list.lua")
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Layangan"))() 
 
 print("staff")
