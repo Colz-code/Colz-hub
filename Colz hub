@@ -1,5 +1,16 @@
 -- if you know
 
+local d = identifyexecutor()
+
+task.spawn(function()
+    local e = identifyexecutor()
+    local n = string.lower(e)
+
+    if n:find("delta") or n:find("xeno") then
+        game.Players.LocalPlayer:Kick("kami tidak support executor tersebut - https://discord.gg/6XxYwznRe")
+    end
+end)
+
 if game.placeId == 100572791490444 then
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Layangan"))() 
 
