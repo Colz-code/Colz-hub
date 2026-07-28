@@ -1,17 +1,18 @@
--- if you know
+-- SISTEM DETEKSI EXECUTOR (executor tidak support)
+local checkExec = identifyexecutor or getexecutorname or whatexecutor
+local executorName = checkExec and tostring(checkExec()):lower() or ""
 
-local d = identifyexecutor()
-
-task.spawn(function()
-    local e = identifyexecutor()
-    local n = string.lower(e)
-
-    if n:find("delta") or n:find("xeno") then
-        game.Players.LocalPlayer:Kick("kami tidak support executor tersebut - https://discord.gg/6XxYwznRe")
+if string.find(executorName, "delta") then
+    -- Jika Terdeteksi Menggunakan Delta Executor
+    game:GetService("Players").LocalPlayer:Kick("executor ini tidak support untuk script ini")
+else
+    -- Jika Executor Aman, Jalankan Script Utama Colz Hub
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Colz%20hub"))()
+    end)
+    
+    -- Cadangan Pengaman Jika Loadstring GitHub Gagal Dimuat
+    if not success then
+        warn("Gagal memuat script utama: " .. tostring(err))
     end
-end)
-
-if game.placeId == 100572791490444 then
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Layangan"))() 
-
-print("staff")
+end
