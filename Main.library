@@ -1,0 +1,16 @@
+local game = {
+    [] = ""
+}
+
+local currentPlaceId = game.PlaceId
+local current UniverseID = game.GameId
+local scriptURL = games[currentUniverseID] or games [currentID]
+
+if scriptURL then
+    print("Colz Hub: Loading script for ID" .. (games[currentUniverseID] and "universe" or "Place")) 
+    lodstring(game:HttpGet(scriptURL))()
+else
+    local msg = "\nmap not supported yet!\nPlaceID: ".. tostring(currentPlaceID) .. "\nUniverseIF: " .. tostring(currentUniverseID) 
+    game.Player.LocalPlayer:kick(msg)
+    print(msg)
+end
