@@ -1,5 +1,5 @@
 local game = {
-    [100572791490444] = ""
+    [100572791490444] = "https://raw.githubusercontent.com/Colz-code/Colz-hub/refs/heads/main/Layangan", 
 }
 
 local currentPlaceId = game.PlaceId
