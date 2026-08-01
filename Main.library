@@ -1,5 +1,5 @@
 local game = {
-    [] = ""
+    [100572791490444] = ""
 }
 
 local currentPlaceId = game.PlaceId
